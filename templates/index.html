@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <title>Textutils</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">shridevlopment</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About US</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact US</a>
+            </li>
+
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+
+        </form>
+    </div>
+</nav>
+<br>
+
+<form class="container" action='/analyze' method='POST'> {% csrf_token %}
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Welcome to Text Analyzer Please Enter Your Text Here</label>
+        <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>
+    </div>
+
+    <div class="custom-control custom-switch">
+        <input type="checkbox" name="removepunc" class="custom-control-input" id="customSwitch1">
+        <label class="custom-control-label" for="customSwitch1">Remove Punctuations</label>
+    </div>
+
+    <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="customSwitch2" name="upercase">
+        <label class="custom-control-label" for="customSwitch2">UPPERCASE</label>
+    </div>
+
+    <div class="custom-control custom-switch">
+        <input type="checkbox" name="newLineRemover" class="custom-control-input" id="customSwitch3">
+        <label class="custom-control-label" for="customSwitch3">New Line Remover</label>
+    </div>
+
+    <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" name="spaceRemover" id="customSwitch4">
+        <label class="custom-control-label" for="customSwitch4">Space Remover</label>
+    </div>
+
+    <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="customSwitch5" name="charCount">
+        <label class="custom-control-label" for="customSwitch5">Char Counter</label>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-success">Analyze</button>
+</form>
+</body>
+</html>
